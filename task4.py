@@ -35,8 +35,7 @@ def show_contact(args, contacts):
 def show_all(contacts):
     if not contacts:
         raise ValueError("Список контактів порожній")
-    for name, phone in contacts.items():
-        print(f"{name}: {phone}")
+    return contacts
 
 def main():
     contacts = {}
@@ -57,7 +56,7 @@ def main():
             elif command == "phone":
                 print(show_contact(args, contacts))
             elif command == "all":
-                show_all(contacts)
+                print(show_all(contacts))
             else:
                 print("Неправильна команда.")
         except ValueError as e:
