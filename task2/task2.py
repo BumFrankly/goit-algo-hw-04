@@ -15,7 +15,7 @@ def get_cats_info(path):
 
                         cats_info.append(cat_info)
                     else:
-                        raise ValueError("Формат введення даних не вірний,потрібно: ID,Name,Age", line.strip())
+                        raise ValueError("Формат введення даних не вірний, потрібно: ID, Name, Age")
                 except ValueError as ve:
                     print(ve)
 
@@ -23,7 +23,9 @@ def get_cats_info(path):
         print("Файл не знайдено.")
     except Exception as e:
         print("Виникла помилка:", e)
-    for cat in cats_info:
-        print(f"ID: {cat['id']}, Name: {cat['name']}, Age: {cat['age']}")
+    
+    return cats_info
 
-cats_info = get_cats_info("cats_file.txt")
+cats_info = get_cats_info("task2\cats_file.txt")
+for cat in cats_info:
+    print(f"ID: {cat['id']}, Name: {cat['name']}, Age: {cat['age']}")
